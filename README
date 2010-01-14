@@ -1,0 +1,62 @@
+kmymoney
+------------------------------------------
+KDE personal finance manager
+
+Runtime requirements:
+  cygwin-1.7.1-1
+  libgcc1-4.3.4-3
+  libical0-0.44-1
+  libkdecore5-4.3.4-1
+  libkpim4-4.3.4-1
+  libofx4-0.9.1-1
+  libQt3Support4-4.5.3-2
+  libQtCore4-4.5.3-2
+  libQtDBus4-4.5.3-2
+  libQtGui4-4.5.3-2
+  libQtSql4-4.5.3-2
+  libQtSvg4-4.5.3-2
+  libQtXml4-4.5.3-2
+  libstdc++6-4.3.4-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.19.51-1
+  cmake-2.8.0-11
+  cygport-0.9.80-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
+  make-3.81-2
+  pkg-config-0.23b-10
+
+Canonical website:
+  http://kmymoney2.sourceforge.net/
+
+Canonical download:
+  http://downloads.sourceforge.net/kmymoney2/
+
+-------------------------------------------
+
+Build instructions:
+  unpack kmymoney-3.95.0-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./kmymoney-3.95.0-X.cygport all
+
+This will create:
+  /usr/src/kmymoney-3.95.0-X-src.tar.bz2
+  /usr/src/kmymoney-3.95.0-X.tar.bz2
+
+-------------------------------------------
+
+Port Notes:
+
+----- version 3.95.0-1 -----
+Version bump for KDE 4.3.
+
+----- version 0.8.9-10 -----
+Initial release for Cygwin 1.7.
+
+
+Cygwin port maintained by:
+http://sourceware.org/cygwinports/
