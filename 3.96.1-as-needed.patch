@@ -1,0 +1,14 @@
+--- origsrc/kmymoney-3.96.1/kmymoney/plugins/kbanking/CMakeLists.txt	2010-02-15 04:48:26.000000000 -0600
++++ src/kmymoney-3.96.1/kmymoney/plugins/kbanking/CMakeLists.txt	2010-02-18 00:13:58.798228400 -0600
+@@ -22,10 +22,10 @@ SET(kmm_kbanking_PART_SRCS kbanking.cpp 
+ KDE4_ADD_PLUGIN(kmm_kbanking ${kmm_kbanking_PART_SRCS})
+ 
+ TARGET_LINK_LIBRARIES(kmm_kbanking
+-                      kmm_mymoney
+                       kmm_kbanking_dialogs
+                       kmm_kbanking_views
+                       kmm_kbanking_widgets
++                      kmm_mymoney
+                       kmm_plugin
+                       ${KDE4_KDEUI_LIBS}
+                       ${KDE4_KDE3SUPPORT_LIBS}
