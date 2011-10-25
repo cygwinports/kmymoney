@@ -1,4 +1,4 @@
 category: KDE
-requires: libgcc1 libical0 libkdecore5 libkpim4 libofx4 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtSql4 libQtSvg4 libQtXml4 libstdc++6
+requires: libalkimia4 libgcc1 libgmp3 libical0 libkdecore5 libkpim4 libofx4 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtSql4 libQtSvg4 libQtXml4 libstdc++6
 sdesc: "KDE personal finance manager"
 ldesc: "KDE personal finance manager"

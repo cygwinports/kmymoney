@@ -9,27 +9,3 @@
  ENDIF(NOT WIN32)
  IF(NOT MSVC)
    # be more pedantic about common symbols
---- origsrc/kmymoney-3.96.1/kmymoney/plugins/printcheck/numbertowords.h	2010-02-15 04:48:27.000000000 -0600
-+++ src/kmymoney-3.96.1/kmymoney/plugins/printcheck/numbertowords.h	2010-02-18 00:17:22.460877300 -0600
-@@ -22,7 +22,7 @@
- 
- #include <qstringlist.h>
- 
--#include <kmymoney/mymoneymoney.h>
-+#include <mymoneymoney.h>
- 
- class MyMoneyMoneyToWordsConverter
- {
---- origsrc/kmymoney-3.96.1/kmymoney/plugins/printcheck/printcheck.cpp	2010-02-15 04:48:27.000000000 -0600
-+++ src/kmymoney-3.96.1/kmymoney/plugins/printcheck/printcheck.cpp	2010-02-18 00:17:22.467877700 -0600
-@@ -31,8 +31,8 @@
- #include <kplugininfo.h>
- 
- // KMyMoney includes
--#include <kmymoney/mymoneyfile.h>
--#include <kmymoney/pluginloader.h>
-+#include "mymoneyfile.h"
-+#include "pluginloader.h"
- 
- #include "numbertowords.h"
- #include "pluginsettings.h"
