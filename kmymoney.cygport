@@ -2,12 +2,29 @@ inherit kde4
 
 NAME="kmymoney"
 VERSION=4.6.3
-RELEASE=1
-CATEGORY="KDE Office"
+RELEASE=2
+CATEGORY="Office"
 SUMMARY="KDE personal finance manager"
 HOMEPAGE="http://kmymoney2.sourceforge.net/"
 SRC_URI="mirror://sourceforge/kmymoney2/${P}.tar.bz2"
 PATCH_URI="
+	fedora/0002-Fix-the-investment-accounts-handling-in-the-institut.patch
+	fedora/0003-Only-load-the-child-accounts-if-there-are-any-otherw.patch
+	fedora/0004-Make-Use-system-color-the-default-behavior.patch
+	fedora/0005-Use-the-Higlight-background-color-for-warnings-since.patch
+	fedora/0006-Use-the-proper-color-group-depending-on-the-focus-st.patch
+	fedora/0007-Save-the-header-state-in-the-investment-view-s-lists.patch
+	fedora/0008-Fix-a-crash-when-cancelling-the-OFX-update-dialog-wh.patch
+	fedora/0009-Make-sure-that-all-transactions-have-a-valid-post-da.patch
+	fedora/0010-Fix-a-possible-crash-while-mapping-an-OFX-account.patch
+	fedora/0011-cmake-libkgpgfile-needs-the-kdepimlibs-include-dirs.patch
+	fedora/0013-Added-definition-for-new-Azerbaijani-Manat.patch
+	fedora/0014-Enable-factor-widget-when-online-source-is-selected.patch
+	fedora/0015-Hide-remove-sensitive-information-from-anon-file.patch
+	fedora/0016-When-KWallet-is-opened-synchronously-do-it-in-a-safe.patch
+	fedora/0019-Fix-the-category-selection-actions-in-the-find-trans.patch
+	fedora/0020-Fix-build-with-GMP-5.1.0.patch
+	fedora/0022-BUG-316042-KMyMoney-hangs-when-editing-transaction-i.patch
 	3.96.1-includes.patch
 	4.5.2-long-double.patch
 "
