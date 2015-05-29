@@ -10,3 +10,5 @@ SRC_URI="mirror://kde/stable/kmymoney/${VERSION}/src/kmymoney-${VERSION}.tar.xz"
 PATCH_URI="
 	4.7.2-fPIC.patch
 "
+
+REQUIRES="kde-runtime"
