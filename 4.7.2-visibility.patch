@@ -1,0 +1,30 @@
+--- origsrc/kmymoney-4.7.2/kmymoney/mymoney/CMakeLists.txt	2015-04-25 12:17:55.000000000 -0500
++++ src/kmymoney-4.7.2/kmymoney/mymoney/CMakeLists.txt	2015-10-16 15:53:59.381382000 -0500
+@@ -35,7 +35,7 @@ set(mymoney_HEADERS ${CMAKE_CURRENT_BINA
+ kde4_add_library(kmm_mymoney SHARED ${kmm_mymoney_LIB_SRCS})
+ generate_export_header(kmm_mymoney BASE_NAME kmm_mymoney)
+ 
+-target_link_libraries(kmm_mymoney LINK_PUBLIC
++target_link_libraries(kmm_mymoney PUBLIC
+                       ${KDE4_KDEUI_LIBS}
+                       ${QT_QTGUI_LIBRARY}
+                       ${QT_QTXML_LIBRARY}
+@@ -43,7 +43,7 @@ target_link_libraries(kmm_mymoney LINK_P
+                       ${KDE4_KDECORE_LIBS}
+                       ${KDE4_KIO_LIBS}
+                       ${LIBALKIMIA_LIBRARIES}
+-                      kmm_storage)
++                      PRIVATE kmm_storage)
+ 
+ set_target_properties(kmm_mymoney PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+ 
+--- origsrc/kmymoney-4.7.2/kmymoney/mymoney/storage/CMakeLists.txt	2015-04-25 12:17:55.000000000 -0500
++++ src/kmymoney-4.7.2/kmymoney/mymoney/storage/CMakeLists.txt	2015-10-16 15:56:18.315024400 -0500
+@@ -15,6 +15,7 @@ set(storage_a_SOURCES
+ # This library is actually not needed. It is built just for
+ # convenience, and then linked into kmm_mymoney.
+ kde4_add_library( kmm_storage STATIC ${storage_a_SOURCES} )
++set_target_properties(kmm_storage PROPERTIES COMPILE_DEFINITIONS "MAKE_KMM_MYMONEY_LIB")
+ 
+ ########### install files ###############
+ 

@@ -2,13 +2,14 @@ inherit kde4
 
 NAME="kmymoney"
 VERSION=4.7.2
-RELEASE=1
+RELEASE=2
 CATEGORY="Office"
 SUMMARY="KDE personal finance manager"
 HOMEPAGE="http://kmymoney2.sourceforge.net/"
 SRC_URI="mirror://kde/stable/kmymoney/${VERSION}/src/kmymoney-${VERSION}.tar.xz"
 PATCH_URI="
 	4.7.2-fPIC.patch
+	4.7.2-visibility.patch
 "
 
 REQUIRES="kde-runtime"
