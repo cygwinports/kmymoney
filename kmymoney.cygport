@@ -2,7 +2,7 @@ inherit kde4
 
 NAME="kmymoney"
 VERSION=4.7.2
-RELEASE=2
+RELEASE=3
 CATEGORY="Office"
 SUMMARY="KDE personal finance manager"
 HOMEPAGE="http://kmymoney2.sourceforge.net/"
