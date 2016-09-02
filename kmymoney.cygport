@@ -5,6 +5,9 @@ VERSION=4.8.0
 RELEASE=1
 CATEGORY="Office"
 SUMMARY="KDE personal finance manager"
+DESCRIPTION="KMyMoney is a personal finance manager for KDE. It enables users of
+open source operating systems and applications to keep careful track of their
+personal finances by providing a broad array of financial features and tools."
 HOMEPAGE="http://kmymoney2.sourceforge.net/"
 SRC_URI="mirror://kde/stable/kmymoney/${VERSION}/src/kmymoney-${VERSION}.tar.xz"
 PATCH_URI="
