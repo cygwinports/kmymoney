@@ -1,0 +1,14 @@
+kmymoney/plugins/kbanking/kbanking.cpp:125:58: error: ‘setenv’ was not
+declared in this scope
+
+--- origsrc/kmymoney-5.0.1/CMakeLists.txt	2018-03-18 10:56:39.655040600 -0500
++++ src/kmymoney-5.0.1/CMakeLists.txt	2018-04-17 23:39:53.097069600 -0500
+@@ -74,7 +74,7 @@
+ add_definitions(-DQT_USE_QSTRINGBUILDER -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
+ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+-set(CMAKE_CXX_EXTENSIONS OFF)
++set(CMAKE_CXX_EXTENSIONS ON)
+ 
+ # use DBus only on Linux
+ if(CMAKE_SYSTEM_NAME MATCHES "Linux")

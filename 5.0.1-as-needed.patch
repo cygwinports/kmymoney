@@ -1,0 +1,124 @@
+--- origsrc/kmymoney-5.0.1/kmymoney/mymoney/CMakeLists.txt	2018-03-18 10:55:30.229660700 -0500
++++ src/kmymoney-5.0.1/kmymoney/mymoney/CMakeLists.txt	2018-04-13 02:02:25.108905700 -0500
+@@ -67,10 +67,10 @@ target_link_libraries(kmm_mymoney
+                       kmm_payeeidentifier
+                       payeeidentifier_iban_bic
+                       payeeidentifier_nationalAccount
+-                      kmm_config
+                       # TODO: fix this
+                       KF5::XmlGui
+                       PRIVATE
++                      kmm_config
+                       onlinetask_unavailabletask
+ )
+ 
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/checkprinting/CMakeLists.txt	2018-03-18 10:55:30.253661200 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/checkprinting/CMakeLists.txt	2018-04-13 11:07:05.100921100 -0500
+@@ -14,6 +14,7 @@ add_library(checkprinting MODULE ${check
+ target_link_libraries(checkprinting
+   Qt5::PrintSupport
+   KF5::I18n
++  kmm_config
+   kmm_mymoney
+   kmm_plugin
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/csv/export/CMakeLists.txt	2018-03-18 10:55:30.253661200 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/csv/export/CMakeLists.txt	2018-04-13 02:17:36.453698700 -0500
+@@ -18,6 +18,7 @@ add_library(csvexporter MODULE
+ )
+ 
+ target_link_libraries(csvexporter
++  kmm_config
+   kmm_mymoney kmm_plugin
+   Alkimia::alkimia
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/csv/import/CMakeLists.txt	2018-03-18 10:55:30.257661300 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/csv/import/CMakeLists.txt	2018-04-13 02:17:44.197642000 -0500
+@@ -43,6 +43,7 @@ add_library(csvimporter MODULE ${csvimpo
+ 
+ target_link_libraries(csvimporter
+   PUBLIC
++    kmm_config
+     kmm_csvimportercore
+     kmm_plugin
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/gnc/import/CMakeLists.txt	2018-03-18 10:55:30.257661300 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/gnc/import/CMakeLists.txt	2018-04-13 02:17:51.196789000 -0500
+@@ -21,6 +21,7 @@ ki18n_wrap_ui(gncimporter_PART_SRCS ${gn
+ add_library(gncimporter MODULE ${gncimporter_PART_SRCS})
+ 
+ target_link_libraries(gncimporter
++  kmm_config
+   kmm_plugin
+   Alkimia::alkimia
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/icalendar/export/CMakeLists.txt	2018-03-18 10:55:30.261661400 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/icalendar/export/CMakeLists.txt	2018-04-13 02:18:02.332486000 -0500
+@@ -15,6 +15,7 @@ add_library(icalendarexporter MODULE ${i
+ target_include_directories(icalendarexporter PRIVATE ${LIBICAL_INCLUDE_DIRS})
+ target_link_libraries(icalendarexporter
+   KF5::KIOWidgets
++  kmm_config
+   kmm_mymoney
+   kmm_plugin
+   ${LIBICAL_LIBRARIES}
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/kbanking/CMakeLists.txt	2018-03-18 10:55:30.261661400 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/kbanking/CMakeLists.txt	2018-04-13 11:07:30.557502300 -0500
+@@ -23,6 +23,7 @@ target_link_libraries(kbanking
+                       kbanking_dialogs
+                       kbanking_widgets
+                       kbanking_tasksettings
++                      kmm_config
+                       kmm_mymoney
+                       kmm_widgets
+                       kmm_plugin
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/onlinejobpluginmockup/CMakeLists.txt	2018-03-18 10:55:30.265661400 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/onlinejobpluginmockup/CMakeLists.txt	2018-04-13 11:07:40.780348800 -0500
+@@ -9,6 +9,7 @@ set(onlinejobpluginmockup_PART_SRCS
+ add_library(onlinejobpluginmockup MODULE ${onlinejobpluginmockup_PART_SRCS})
+ 
+ target_link_libraries(onlinejobpluginmockup
++                      kmm_config
+                       kmm_mymoney
+                       kmm_plugin
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/qif/export/CMakeLists.txt	2018-03-18 10:55:30.269661500 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/qif/export/CMakeLists.txt	2018-04-13 02:18:48.965819000 -0500
+@@ -20,6 +20,7 @@ ki18n_wrap_ui(qifexporter_PART_SRCS ${qi
+ add_library(qifexporter MODULE ${qifexporter_PART_SRCS})
+ 
+ target_link_libraries(qifexporter
++  kmm_config
+   kmm_plugin
+   models #TODO: Get rid of this big dependency
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/qif/import/CMakeLists.txt	2018-03-18 10:55:30.269661500 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/qif/import/CMakeLists.txt	2018-04-13 02:18:56.483472300 -0500
+@@ -19,6 +19,7 @@ ki18n_wrap_ui(qifimporter_PART_SRCS ${qi
+ add_library(qifimporter MODULE ${qifimporter_PART_SRCS})
+ 
+ target_link_libraries(qifimporter
++  kmm_config
+   kmm_plugin
+   Alkimia::alkimia
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/reconciliationreport/CMakeLists.txt	2018-03-18 10:55:30.269661500 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/reconciliationreport/CMakeLists.txt	2018-04-13 11:06:04.111289800 -0500
+@@ -15,6 +15,7 @@ add_library(reconciliationreport MODULE
+ 
+ target_link_libraries(reconciliationreport
+   Qt5::PrintSupport
++  kmm_config
+   kmm_mymoney
+   kmm_plugin
+ )
+--- origsrc/kmymoney-5.0.1/kmymoney/plugins/weboob/CMakeLists.txt	2018-03-18 10:55:30.273661600 -0500
++++ src/kmymoney-5.0.1/kmymoney/plugins/weboob/CMakeLists.txt	2018-04-13 11:08:01.778931600 -0500
+@@ -20,6 +20,7 @@ target_link_libraries(
+   PRIVATE
+   weboob_interface
+   weboob_dialogs
++  kmm_config
+   kmm_mymoney
+   kmm_widgets
+   kmm_plugin

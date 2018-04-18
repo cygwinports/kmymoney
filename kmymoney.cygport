@@ -1,7 +1,7 @@
-inherit kde4
+inherit kf5
 
 NAME="kmymoney"
-VERSION=4.8.0
+VERSION=5.0.1
 RELEASE=1
 CATEGORY="Office"
 SUMMARY="KDE personal finance manager"
@@ -11,8 +11,45 @@ personal finances by providing a broad array of financial features and tools."
 HOMEPAGE="http://kmymoney2.sourceforge.net/"
 SRC_URI="mirror://kde/stable/kmymoney/${VERSION}/src/kmymoney-${VERSION}.tar.xz"
 PATCH_URI="
-	4.7.2-fPIC.patch
-	4.8.0-visibility.patch
+	5.0.1-as-needed.patch
+	5.0.1-dllexport.patch
+	5.0.1-ftm.patch
 "
 
-REQUIRES="kde-runtime"
+PKG_NAMES="${NAME} ${NAME}-devel"
+kmymoney_CONTENTS="
+	etc/postinstall/${NAME}.sh
+	usr/bin/cygkmm_*-5.dll
+	usr/bin/cygpayeeidentifier_*-5.dll
+	usr/bin/kmymoney.exe
+	usr/lib/qt5/plugins/kmymoney/
+	usr/share/applications/org.kde.kmymoney.desktop
+	usr/share/checkprinting/
+	usr/share/config.kcfg/kbanking.kcfg
+	usr/share/config.kcfg/kmymoney.kcfg
+	usr/share/doc/HTML/*/kmymoney/
+	usr/share/doc/${NAME}
+	usr/share/icons/hicolor/*/*/*kmymoney*.*
+	usr/share/kbanking/
+	usr/share/kconf_update/kmymoney.upd
+	usr/share/kmymoney/
+	usr/share/kservices5/*
+	usr/share/kservicetypes5/ibanbicdata.desktop
+	usr/share/kservicetypes5/kmymoney-*.desktop
+	usr/share/kxmlgui5/*
+	usr/share/locale/*/LC_MESSAGES/kmymoney.mo
+	usr/share/man/man1/kmymoney.1*
+	usr/share/man/*/man1/kmymoney.1*
+	usr/share/metainfo/org.kde.kmymoney.appdata.xml
+	usr/share/mime/packages/x-kmymoney.xml
+"
+kmymoney_devel_REQUIRES="libalkimia5-devel libQt5Core-devel libQt5Gui-devel libKF5Completion-devel"
+kmymoney_devel_CONTENTS="
+	usr/include/kmymoney/
+	usr/lib/lib*.dll.a
+"
+
+# would need to add a bunch of *_STATIC_DEFINE's to get tests to build
+CYGCMAKE_ARGS="
+	-DBUILD_TESTING=OFF
+"

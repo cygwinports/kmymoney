@@ -1,0 +1,10 @@
+--- origsrc/kmymoney-5.0.1/kmymoney/CMakeLists.txt	2018-03-18 10:55:30.181659800 -0500
++++ src/kmymoney-5.0.1/kmymoney/CMakeLists.txt	2018-04-12 23:44:49.624593800 -0500
+@@ -58,6 +58,7 @@ set( kmm_config_SRCS kmymoneyglobalsetti
+ kconfig_add_kcfg_files( kmm_config_SRCS kmymoneysettings.kcfgc )
+ add_library(kmm_config STATIC ${kmm_config_SRCS})
+ target_link_libraries(kmm_config KF5::WidgetsAddons KF5::ConfigWidgets Qt5::Sql Alkimia::alkimia)
++set_target_properties(kmm_config PROPERTIES COMPILE_DEFINITIONS KMM_MYMONEY_STATIC_DEFINE)
+ 
+ ########### common code (kmymoney_common) STATIC ###############
+ # will be linked into kmymoney, kmymoneytest, and libkmymoney.so
